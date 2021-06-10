@@ -2,12 +2,11 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
-
 <html>
 <head>
-<title>ìƒí’ˆë“±ë¡</title>
-
+	<meta charset="EUC-KR">
+	
+	<!-- ÂüÁ¶ : http://getbootstrap.com/css/   ÂüÁ¶ -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<!--  ///////////////////////// Bootstrap, jQuery CDN ////////////////////////// -->
@@ -17,102 +16,90 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 	
 	<!-- Bootstrap Dropdown Hover CSS -->
-   <link href="/css/animate.min.css" rel="stylesheet">
-   <link href="/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
    
     <!-- Bootstrap Dropdown Hover JS -->
-   <script src="/javascript/bootstrap-dropdownhover.min.js"></script>
+    <script src="/javascript/bootstrap-dropdownhover.min.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			$("#ok").on("click",function(){
+				$(self.location).attr("href","/product/listProduct?menu=manage");
+			})
+		})
+	</script>
 	
-	<!--  ///////////////////////// CSS ////////////////////////// -->
+	<!--  CSS Ãß°¡ : Åø¹Ù¿¡ È­¸é °¡¸®´Â Çö»ó ÇØ°á :  ÁÖ¼®Ã³¸® Àü, ÈÄ È®ÀÎ-->
 	<style>
- 		body {
-            padding-top : 50px;
+        body {
+            padding-top : 70px;
         }
-     </style>
-     
-<script type="text/javascript">
-	
-	$( function(){
-		
-		$("td.ct_btn01:contains('í™•ì¸')").on("click", function(){
-			self.location = "/product/listProduct?menu=manage"
-		});
-		
-		$("td.ct_btn01:contains('ì¶”ê°€ë“±ë¡')").on("click", function(){
-			self.location = "/product/addProduct"
-		});
-		
-	});
+        
+        #fileName {
+			  width: 200px;
+			  height: 150px;
+			  object-fit: cover;
+			}
+   	</style>
 
-</script>
 </head>
 
-<body >
+<body>
 
-<!-- ToolBar Start /////////////////////////////////////-->
 	<jsp:include page="/layout/toolbar.jsp" />
-   	<!-- ToolBar End /////////////////////////////////////-->
-	
-	<!--  í™”ë©´êµ¬ì„± div Start /////////////////////////////////////-->
+
 	<div class="container">
 	
 		<div class="page-header">
-	       <h3 class=" text-info">ìƒí’ˆ ì •ë³´ í™•ì¸</h3>
+	       <h3 class=" text-info">»óÇ°»ó¼¼Á¶È¸</h3>
 	    </div>
-	
+		
+		<hr/>
+		
 		<div class="row">
-	  		<div class="col-xs-4 col-md-2"><strong>ì•„ ì´ ë””</strong></div>
-			<div class="col-xs-8 col-md-4">${user.userId}</div>
+	  		<div class="col-xs-4 col-md-2 "><strong>»óÇ°¸í</strong></div>
+			<div class="col-xs-8 col-md-4">${product.prodName}</div>
 		</div>
 		
 		<hr/>
 		
 		<div class="row">
-	  		<div class="col-xs-4 col-md-2 "><strong>ì´ ë¦„</strong></div>
-			<div class="col-xs-8 col-md-4">${user.userName}</div>
+	  		<div class="col-xs-4 col-md-2 "><strong>»óÇ° ÀÌ¹ÌÁö</strong></div>
+			<img id="fileName" src = "/images/uploadFiles/${product.fileName}" alt="»çÁø¾øÀ½"/>
 		</div>
 		
 		<hr/>
 		
 		<div class="row">
-	  		<div class="col-xs-4 col-md-2 "><strong>ì£¼ì†Œ</strong></div>
-			<div class="col-xs-8 col-md-4">${user.addr}</div>
+	  		<div class="col-xs-4 col-md-2 "><strong>»óÇ° »ó¼¼Á¤º¸</strong></div>
+			<div class="col-xs-8 col-md-4">${product.prodDetail}</div>
 		</div>
 		
 		<hr/>
 		
 		<div class="row">
-	  		<div class="col-xs-4 col-md-2 "><strong>íœ´ëŒ€ì „í™”ë²ˆí˜¸</strong></div>
-			<div class="col-xs-8 col-md-4">${ !empty user.phone ? user.phone : ''}	</div>
+	  		<div class="col-xs-4 col-md-2"><strong>Á¦Á¶ÀÏÀÚ</strong></div>
+			<div class="col-xs-8 col-md-4">${product.manuDate}</div>
 		</div>
 		
 		<hr/>
 		
 		<div class="row">
-	  		<div class="col-xs-4 col-md-2"><strong>ì´ ë©” ì¼</strong></div>
-			<div class="col-xs-8 col-md-4">${user.email}</div>
-		</div>
-		
-		<hr/>
-		
-		<div class="row">
-	  		<div class="col-xs-4 col-md-2 "><strong>ê°€ì…ì¼ì</strong></div>
-			<div class="col-xs-8 col-md-4">${user.regDate}</div>
+	  		<div class="col-xs-4 col-md-2 "><strong>°¡°İ</strong></div>
+			<div class="col-xs-8 col-md-4">${product.price}</div>
 		</div>
 		
 		<hr/>
 		
 		<div class="row">
 	  		<div class="col-md-12 text-center ">
-	  			<button type="button" class="btn btn-primary">íšŒì›ì •ë³´ìˆ˜ì •</button>
+					<button id="ok" >È®ÀÎ</button>
 	  		</div>
 		</div>
 		
 		<br/>
 		
  	</div>
- 	<!--  í™”ë©´êµ¬ì„± div Start /////////////////////////////////////-->
-
 
 </body>
 </html>
