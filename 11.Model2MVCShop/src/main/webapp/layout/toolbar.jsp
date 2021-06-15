@@ -145,8 +145,16 @@
 			$("a:contains('상 품 검 색')").on("click", function(){
 				self.location = "/product/listProduct?menu=search"
 			});
+			
+			$("a:contains('최근본상품')").on("click", function(){
+				history();
+			});
 		});
 		
-		
+		function history(){
+			popWin = window.open("/history.jsp",
+														"popWin",
+														"left=300, top=200, width=300, height=200, marginwidth=0, marginheight=0, scrollbars=no, scrolling=no, menubar=no, resizable=no");
+		}
 		
 	</script>  

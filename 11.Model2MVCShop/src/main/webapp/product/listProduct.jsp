@@ -43,6 +43,14 @@
 	   	$("form").attr("method", "POST").attr("action","/product/listProduct?menu=${menu}").submit();	
 	}
 	
+	$(function() {
+		
+		$( "button.btn.btn-default" ).on("click" , function() {
+			fncGetList(1);
+		});
+		 
+	});
+	
 	$( function(){
 		
 		$( "td:nth-child(2)").on("click", function(){

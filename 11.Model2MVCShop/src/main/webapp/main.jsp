@@ -53,7 +53,7 @@
 	<div class="container ">
       <!-- Main jumbotron for a primary marketing message or call to action -->
         <h3>Model2MVCShop </h3>
-        <p>J2SE , DBMS ,JDBC , Servlet & JSP, Java Framework , HTML5 , UI Framework 학습 후 Mini-Project 진행</p>
+        <p>J2SE , DBMS ,JDBC , Servlet & JSP, Java Framework , HTML5 , UI Framework 활용한 쇼핑몰 Web Project</p>
     </div>
 	<br>
 		

@@ -39,11 +39,11 @@
 		$(function() {
 			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
 			$( "button:contains('수정')" ).on("click" , function() {
-					self.location = "/product/updateProduct?prodNo=${product.prodNo}"
+				self.location = "/product/updateProduct?prodNo=${product.prodNo}"
 			});
 			
-			$( "button:contains('수정')" ).on("click" , function() {
-				self.location = "/product/updateProduct?prodNo=${product.prodNo}"
+			$( "button:contains('구매')" ).on("click" , function() {
+				self.location = "/purchase/addPurchase?prodNo=${product.prodNo}"
 			});
 			
 			$( "button:contains('이전')" ).on("click" , function() {

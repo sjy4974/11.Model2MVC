@@ -73,7 +73,7 @@ public class ProductController {
 		
 		
 		String originalFile = f.getOriginalFilename();
-        //파일명 중 확장자만 추출                                                //lastIndexOf(".") - 뒤에 있는 . 의 index번호
+        //파일명 중 확장자만 추출                                                
         String originalFileExtension = originalFile.substring(originalFile.lastIndexOf("."));
         
         String storedFileName = UUID.randomUUID().toString().replaceAll("-", "") + originalFileExtension;
